@@ -1,4 +1,5 @@
 #!/usr/bin/env embedly_npmbuild.sh
+MINORVERSION="2.0.2"
 ADDL_ARGS="--depends nodejs6"
 DEB_USERS="chartedjs"
 CREATE_DEB="1"
