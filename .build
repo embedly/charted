@@ -1,0 +1,4 @@
+#!/usr/bin/env embedly_npmbuild.sh
+ADDL_ARGS="--depends nodejs6"
+DEB_USERS="chartedjs"
+CREATE_DEB="1"

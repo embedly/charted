@@ -1,0 +1,17 @@
+check process embedly-chartedjs-3000
+    with pidfile "/var/run/embedly-chartedjs/chartedjs-http-3000.pid"
+    group embedly-chartedjs
+
+    stop program = "/sbin/stop embedly-chartedjs-http PORT=3000"
+    start program = "/sbin/start embedly-chartedjs-http PORT=3000"
+
+    if failed port 3000 then restart
+    if mem > 200 MB for 5 cycles then restart
+
+check file embedly_chartedjs_revision with path /usr/share/embedly-chartedjs/about.txt
+    if changed checksum then
+         exec "/usr/bin/monit -c /etc/monit/monitrc -g embedly-chartedjs restart"
+
+check file embedly_chartedjs_conf with path /etc/default/embedly-chartedjs
+    if changed checksum then
+         exec "/usr/bin/monit -c /etc/monit/monitrc -g embedly-chartedjs restart"
