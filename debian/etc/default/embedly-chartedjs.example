@@ -1,0 +1,3 @@
+HTTP_LOG="/mnt/log/embedly"
+HTTP_USER="chartedjs"
+HTTP_ADDL_ARGS=""
